@@ -15,6 +15,6 @@ before_script:
   - cd ss && ../git-new-workdir . html gh-pages && cd -
 script:
   - bundle exec ruby main.rb
-  - bundle exec ruby generator.rb
+  - bundle exec ruby generate.rb
 after_script:
   - cd ss && git push origin master && git push origin gh-pages && cd -
