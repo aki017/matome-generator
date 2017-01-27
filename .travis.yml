@@ -19,5 +19,14 @@ script:
   - bundle exec ruby main.rb
   - bundle exec ruby generate.rb
 after_script:
-  - cd ss && git add . && git commit -m "auto commited `date`" && git push origin master && cd -
-  - cd ss/html && git add . && git commit -m "auto commited `date`" && git push origin gh-pages && cd -
+  - cd ss
+  - cd git add .
+  - git commit -m "auto commited `date`"
+  - git push origin master
+  - cd -
+
+  - cd ss/html
+  - git add .
+  - git commit -m "auto commited `date`"
+  - git push origin gh-pages
+  - cd -
