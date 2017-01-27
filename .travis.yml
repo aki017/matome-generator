@@ -7,9 +7,12 @@ before_install:
   - chmod 600 ~/.ssh/id_rsa
   - git config --global user.email "aki@aki017.info"
   - git config --global user.name "Auto Bot"
+install:
+  - wget https://github.com/git/git/raw/master/contrib/workdir/git-new-workdir
+  - chmod a+x git-new-workdir
 before_script:
   - git clone git@github.com:aki017/ss.aki017.info ss
-  - cd ss && git worktree --add html gh-pages
+  - cd ss && ../git-new-workdir . html gh-pages
 script:
   - bundle exec ruby main.rb
   - bundle exec ruby generator.rb
