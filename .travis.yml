@@ -12,9 +12,9 @@ install:
   - chmod a+x git-new-workdir
 before_script:
   - git clone git@github.com:aki017/ss.aki017.info ss
-  - cd ss && ../git-new-workdir . html gh-pages
+  - cd ss && ../git-new-workdir . html gh-pages && cd -
 script:
   - bundle exec ruby main.rb
   - bundle exec ruby generator.rb
 after_script:
-  - cd ss && git push origin master && git push origin gh-pages
+  - cd ss && git push origin master && git push origin gh-pages && cd -
