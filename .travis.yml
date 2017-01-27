@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.4.0 
+cache: bundler
+before_install:
+  - openssl aes-256-cbc -K $encrypted_952e21a345db_key -iv $encrypted_952e21a345db_iv -in deploy_key.enc -out ~/.ssh/id_ed25519 -d
+before_script:
+  - git clone git@github.com:aki017/ss.aki017.info ss
+  - cd ss && git worktree --add html gh-pages
+script:
+  - bundle exec ruby main.rb
+  - bundle exec ruby generator.rb
+after_script:
+  - cd ss && git push origin master && git push origin gh-pages
