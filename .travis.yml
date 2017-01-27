@@ -4,6 +4,9 @@ rvm:
 cache: bundler
 before_install:
   - openssl aes-256-cbc -K $encrypted_952e21a345db_key -iv $encrypted_952e21a345db_iv -in deploy_key.enc -out ~/.ssh/id_ed25519 -d
+  - chmod 600 ~/.ssh/id_ed25519",
+  - git config --global user.email "aki@aki017.info"
+  - git config --global user.name "Auto Bot"
 before_script:
   - git clone git@github.com:aki017/ss.aki017.info ss
   - cd ss && git worktree --add html gh-pages
