@@ -20,7 +20,7 @@ script:
   - bundle exec ruby generate.rb
 after_script:
   - cd ss
-  - cd git add .
+  - git add .
   - git commit -m "auto commited `date`"
   - git push origin master
   - cd -
