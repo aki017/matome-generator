@@ -11,7 +11,7 @@ target_types.each do |tt|
   target_urls.each do |url|
     puts "Start URL: #{url}"
 
-    feed = Feedjira::Feed.fetch_and_parse(url)
+    feed = Feedjira::Feed.fetch_and_parse(url) rescue next
     feed.entries.each do |entry|
       uri = URI.parse entry.url
 
